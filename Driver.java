@@ -1,6 +1,8 @@
 import java.util.Scanner;
 public class Driver {
     public static void main(String[] args) {
+        //TODO: Implement mutual exclusion for the `primes` list.
+
         int limit;
         int nthreads;
         Scanner s = new Scanner(System.in);
@@ -39,11 +41,11 @@ class Prime extends Thread{
     }
     public void run() {
       for (int n =lower; n<=upper;n++){
-        //System.out.println(n);
         if (isPrime(n))
-            System.out.println("Prime " + n);
+            System.out.println("Prime " + n); //
         else
             System.out.println("not Prime " + n);
+
       }
 
     }
