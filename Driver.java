@@ -1,10 +1,13 @@
 import java.util.Scanner;
 public class Driver {
     public static void main(String[] args) {
-        //TODO: Implement mutual exclusion for the `primes` list.
-
+        /*TODO: 
+            1. Implement mutual exclusion for the `primes` list.
+            2. Implement the computation of the runtime of your algorithm. 
+                - The timer starts after user input is collected, and the timer stops before printing the number of primes found.
+            3. Double check?*/
         int limit;
-        int nthreads;
+        int nthreads =1;
         Scanner s = new Scanner(System.in);
         System.out.println("Enter upper bound: ");
         limit = s.nextInt();
@@ -12,7 +15,7 @@ public class Driver {
         nthreads = s.nextInt();
         s.close();
         int upper;
-        //Thread []threads = new Thread[nthreads];
+        //Implement threading to split the range of integers across the specified number of threads.
         int divisions= (limit-1)/nthreads + (limit-1)%nthreads;
         int lower =2;
         for(int i =0; i<nthreads;i++){
@@ -42,7 +45,7 @@ class Prime extends Thread{
     public void run() {
       for (int n =lower; n<=upper;n++){
         if (isPrime(n))
-            System.out.println("Prime " + n); //
+            System.out.println("Prime " + n); 
         else
             System.out.println("not Prime " + n);
 
