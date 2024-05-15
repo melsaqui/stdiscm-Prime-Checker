@@ -5,7 +5,7 @@ public class Driver {
     public static void main(String[] args) {
         /*TODO: 
             1.(Double check) Implement mutual exclusion for the `primes` list.
-            2. Implement the computation of the runtime of your algorithm. 
+            2. (DONE)Implement the computation of the runtime of your algorithm. 
                 - The timer starts after user input is collected, and the timer stops before printing the number of primes found.
             3. Double check?*/
         int limit;
@@ -43,7 +43,7 @@ public class Driver {
            
         }   
         long end = System.nanoTime();
-        
+
         for (int j =0; j< threads[nthreads-1].getList().size();j++){
             System.out.println(threads[nthreads-1].getList().get(j));
         } 
