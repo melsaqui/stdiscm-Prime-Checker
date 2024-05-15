@@ -15,7 +15,7 @@ public class Prime extends Thread{
     }
     public void run() {
      // lock.lock(); 
-      System.out.println("Thread " ); 
+      //System.out.println("Thread " ); 
       for (int n =lower; n<=upper;n++){
         if (isPrime(n)){
            // System.out.println("Prime " + n); 
@@ -28,9 +28,14 @@ public class Prime extends Thread{
      //lock.unlock();
     }
     public static synchronized void addToList(int n) {
-        lock.lock();
-        PrimeList.add(n);
-        lock.unlock();
+        try{
+            lock.lock();
+            PrimeList.add(n);
+        }finally{
+            lock.unlock();
+        }
+       
+       
     }
     public static synchronized ArrayList<Integer> getList() {
         return PrimeList;

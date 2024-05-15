@@ -15,6 +15,9 @@ public class Driver {
         limit = s.nextInt();
         System.out.println("Enter number of threads: ");
         nthreads = s.nextInt();
+        System.out.println("");
+
+        long start = System.nanoTime();
         s.close();
         int upper;
         //Implement threading to split the range of integers across the specified number of threads.
@@ -39,10 +42,12 @@ public class Driver {
             }
            
         }   
+        long end = System.nanoTime();
+        
         for (int j =0; j< threads[nthreads-1].getList().size();j++){
             System.out.println(threads[nthreads-1].getList().get(j));
         } 
-        
+        System.out.println("Execution time: " + (end-start) + " nanoseconds");
 
     }
     
