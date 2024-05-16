@@ -3,11 +3,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 public class Driver {
     public static void main(String[] args) {
-        /*TODO: 
-            1.(Double check) Implement mutual exclusion for the `primes` list.
-            2. (DONE)Implement the computation of the runtime of your algorithm. 
-                - The timer starts after user input is collected, and the timer stops before printing the number of primes found.
-            3. Double check?*/
         int limit;
         int nthreads =1;
         Scanner s = new Scanner(System.in);

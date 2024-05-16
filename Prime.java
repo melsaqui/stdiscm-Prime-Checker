@@ -14,18 +14,15 @@ public class Prime extends Thread{
         this.lower= lower;
     }
     public void run() {
-     // lock.lock(); 
-      //System.out.println("Thread " ); 
+     
       for (int n =lower; n<=upper;n++){
         if (isPrime(n)){
-           // System.out.println("Prime " + n); 
             addToList(n);
         }
-        //else
-        //   System.out.println("not Prime " + n);
+       
 
       }
-     //lock.unlock();
+    
     }
     public static synchronized void addToList(int n) {
         try{
